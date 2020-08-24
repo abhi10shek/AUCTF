@@ -1,0 +1,2 @@
+auctf{g0tt@_muv_fas7}
+while [ 1 ];do echo "auctf{g0tt@_muv_fas7}" | sudo -u level4  /home/level3/passcodes.sh | grep "auctf{";done

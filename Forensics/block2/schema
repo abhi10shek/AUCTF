@@ -1,0 +1,30 @@
+-- Adminer 4.7.6 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `co_block`;
+CREATE TABLE `co_block` (
+  `rowid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `time` int(10) DEFAULT NULL,
+  `user` int(8) DEFAULT NULL,
+  `rolled_back` tinyint(1) DEFAULT NULL,
+  `wid` int(4) DEFAULT NULL,
+  `x` int(8) DEFAULT NULL,
+  `y` int(3) DEFAULT NULL,
+  `z` int(8) DEFAULT NULL,
+  `type` int(6) DEFAULT NULL,
+  `data` int(8) DEFAULT NULL,
+  `meta` blob,
+  `blockdata` blob,
+  `action` int(2) DEFAULT NULL,
+  PRIMARY KEY (`rowid`),
+  KEY `wid` (`wid`,`x`,`z`,`time`),
+  KEY `user` (`user`,`time`),
+  KEY `type` (`type`,`time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `co_block` (`rowid`, `time`, `user`, `rolled_back`, `wid`, `x`, `y`, `z`, `type`, `data`, `meta`, `blockdata`, `action`) VALUES
+(1,	1580550594,	3,	0,	1,	-145,	22,	1377,	2,	0,	NULL,	'1',	1),
